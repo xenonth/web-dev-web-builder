@@ -1,4 +1,6 @@
 // TODO: Write code to define and export the Employee class
+/*
+*/
 const inquirer = require("inquirer");
 
 class Employee {
@@ -18,23 +20,22 @@ class Employee {
         this.id = id;
         this.email = email;
     }
-    // name setter argument
-    nameSetter() {
-        inquirer.prompt([{
-            name: "name",
-            message: "What is the team member's name?",
-            type: "input",
-        }]).then(function({name}) {
-            console.log(name);
-        })
-        
-        
+    // name retrieval
+    getName() {
+        console.log(`Employee's name is ${this.name}`);
+    }
+    
+    //id setter
+    getId() {
+        console.log(`Employee's ID is ${this.id}`)
+    }
+    // email setter using inquirer.
+    getId() {
+        console.log(`Employee's email is${this.email}`)
+    }
+    getRole() {
+        return Employee ();
     }
 
-
-    //id setter
-
-    // email setter using inquirer.
-
 }
-let newEmployee = new Employee (newEmployee.nameSetter(), 32, "test@test.com");
+module.exports.Employee = Employee ();
