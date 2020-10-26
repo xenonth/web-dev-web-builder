@@ -27,11 +27,11 @@ class Employee {
     
     //id setter
     getId() {
-        console.log(`Employee's ID is ${this.id}`)
+        console.log(`${this.name}'s ID is ${this.id}`)
     }
     // email setter using inquirer.
     getId() {
-        console.log(`Employee's email is${this.email}`)
+        console.log(`${this.name}'s email is${this.email}`)
     }
     getRole() {
         return Employee ();
