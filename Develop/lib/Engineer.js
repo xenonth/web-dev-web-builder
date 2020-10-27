@@ -8,13 +8,14 @@ class Engineer extends Employee {
         this.github = github;
     }
     getGithub () {
-        let githubURL = `https://github.com/${this.github}`;
-        return githubURL;
+        return this.github;
+        
     }
 
     getRole() {
-        return Engineer
+        let currentRole = "Engineer";
+        return currentRole;
     }
 }
 
-module.exports = new Engineer ();
+module.exports = Engineer;
