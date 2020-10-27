@@ -5,37 +5,28 @@ const inquirer = require("inquirer");
 
 class Employee {
     constructor (name, id, email) {
-        // error catching if not all constructor fields are met.
-        if (!name) {
-            throw new Error("You are missing the name.");
-        }
-        if (!id) {
-            throw new Error("You are missing the employee's id.");
-        }
-        if (!email) {
-            throw new Error("You are missing the employee's email.");
-        }
-
         this.name = name;
         this.id = id;
         this.email = email;
     }
     // name retrieval
     getName() {
-        console.log(`Employee's name is ${this.name}`);
+        return this.name
     }
     
     //id setter
     getId() {
-        console.log(`${this.name}'s ID is ${this.id}`)
+        return this.id
     }
     // email setter using inquirer.
-    getId() {
-        console.log(`${this.name}'s email is${this.email}`)
+    getEmail() {
+        return this.email
     }
+    // getting role of the employee
     getRole() {
-        return Employee ();
+      let currentRole = "Employee";
+      return currentRole;
     }
 
 }
-module.exports.Employee = Employee ();
+module.exports = Employee;

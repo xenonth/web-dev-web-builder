@@ -11,6 +11,6 @@ class Manager extends Employee {
     }
 }
 
-module.exports.Manager = Manager ();
+module.exports = new Manager ();
 
 
