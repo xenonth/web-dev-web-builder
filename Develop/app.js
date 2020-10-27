@@ -11,12 +11,16 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 const Choices = require("inquirer/lib/objects/choices");
 
+// values for psuhing team members to the array 
+const teamArray = [];
+
 
 // Write code to use inquirer to gather information about the development team members,
 
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 //1. inquirer.prompt to call questions based on the class. 
+
 const projectLeader = () => {
     inquirer.prompt([{
         name: "name",
@@ -43,6 +47,7 @@ const projectLeader = () => {
         const projectLeader = new Manager(data.name, data.id, data.email, data.officeNumber);
         
         console.log(projectLeader);
+        teamArray.push(projectLeader);
 
         memberSelection();
 
@@ -61,6 +66,7 @@ let otherMembersPrompt =
         choices: ['Intern','Engineer','Finished'],
 
     }
+
 // function to trigger additional team member information
 function memberSelection () {
     inquirer.prompt(otherMembersPrompt).then((answers) => {
@@ -70,6 +76,7 @@ function memberSelection () {
             internTeamMember ();
         } else if (answers.otherMembers === 'Finished') {
             console.log("Formatting team members");
+            console.log(teamArray);
         }
     });
 }
@@ -77,7 +84,6 @@ function memberSelection () {
 
 function engineerTeamMember() {
     // Inquirer.prompt for Engineer class
-
     inquirer.prompt([
         {
             name: "name",
@@ -101,8 +107,9 @@ function engineerTeamMember() {
         },
         
         ]) .then( data => {
-                const engineer = new Engineer(data.name, data.id, data.email, data.github);
+                let engineer = new Engineer(data.name, data.id, data.email, data.github);
                 console.log(engineer);
+                teamArray.push(engineer)
                 // calling for additional members
                 memberSelection();
         }) .catch(error => {
@@ -113,6 +120,8 @@ function engineerTeamMember() {
           } 
 // function for intern functions
 function internTeamMember () {
+
+    console.log(count);
     inquirer.prompt([
         {
             name: "name",
@@ -136,8 +145,10 @@ function internTeamMember () {
         },
 
         ]) .then( data => {
-                const intern= new Intern(data.name, data.id, data.email, data.school);
+                let intern = new Intern(data.name, data.id, data.email, data.school);
                 console.log(intern);
+                teamArray.push(intern);
+
                 memberSelection()
         }) .catch(error => {
                 console.log(error);
