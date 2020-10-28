@@ -85,11 +85,13 @@ function memberSelection () {
         
             fs.writeFile(outputPath, render(teamArray), function(err) {
                 if (err) {
+
                 console.log(err)
+
                 } else {
                     console.log("team.html has been successfully built!")
                 }
-            } );
+            });
         }
     });
 }
