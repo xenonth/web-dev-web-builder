@@ -17,10 +17,16 @@
 A CLI for manager's to input their employee's contact information is constructed and placed in the output directory under the filename index.html
 
 ### How to Install
-This program requires the following to be installed in order to run succesfully, * jest * fs * inquirer * path
+This program requires the following to be installed in order to run succesfully, 
+* node.js
+* jest 
+* fs 
+* inquirer 
+* path
 
 ### Instructions
 To run the program make sure that the file's directory is open in your terminal, run node app.js and answer the manager questions.  Select Intern or Enginer for additional staff and personal inputs of that position.  The program assumes that there is only one manager within the project team.  Thus the Project Lead is the one assumed to run the program through the CLI.
+![Demonstration](https://drive.google.com/file/d/1OJfGck656Wh7Ym2mkdoOfqu-WDbx14Nk/view)
 
 ### Usage
 The program can only be run from the CLI, after the team.html construction it is possible to manipulate the html if necessary.
