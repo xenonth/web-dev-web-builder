@@ -163,12 +163,12 @@ function internTeamMember () {
 //2.. Using information given by the inquier log the data to the console
 projectLeader();
 
-
-//3.. Ask if any other uses wish to be used, if selected trigger a function to call inquirer for thre required data.
-
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
+/* 
+After the user has input all employees desired, call the `render` function (required
+ above) and pass in an array containing all employee objects; the `render` function will
+ generate and return a block of HTML including templated divs for each employee! 
+ */
+render(teamArray);
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
