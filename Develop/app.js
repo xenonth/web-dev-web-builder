@@ -67,7 +67,7 @@ let otherMembersPrompt =
 
     }
 
-// function to trigger additional team member information
+// function to trigger additional team member information based on the above selection.
 function memberSelection () {
     inquirer.prompt(otherMembersPrompt).then((answers) => {
         if (answers.otherMembers === 'Engineer') {
@@ -75,8 +75,21 @@ function memberSelection () {
         } else if (answers.otherMembers === 'Intern') {
             internTeamMember ();
         } else if (answers.otherMembers === 'Finished') {
+
+            // Once Manager is done will build, render and construct html.
             console.log("Formatting team members");
+            
             console.log(teamArray);
+
+                        console.log("Contstructing team.html!")
+        
+            fs.writeFile(outputPath, render(teamArray), function(err) {
+                if (err) {
+                console.log(err)
+                } else {
+                    console.log("team.html has been successfully built!")
+                }
+            } );
         }
     });
 }
@@ -120,8 +133,6 @@ function engineerTeamMember() {
           } 
 // function for intern functions
 function internTeamMember () {
-
-    console.log(count);
     inquirer.prompt([
         {
             name: "name",
@@ -156,25 +167,24 @@ function internTeamMember () {
         })
 
 } 
-// use inquirer.prompt inbuilt function capacity to work the answers.
-
-// function to create data for an intern
-
-//2.. Using information given by the inquier log the data to the console
+// to run the program
 projectLeader();
+
 
 /* 
 After the user has input all employees desired, call the `render` function (required
  above) and pass in an array containing all employee objects; the `render` function will
  generate and return a block of HTML including templated divs for each employee! 
  */
-render(teamArray);
+
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
 // `output` folder. You can use the variable `outputPath` above target this location.
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
+
+
 
 // HINT: each employee type (manager, engineer, or intern) has slightly different
 // information; write your code to ask different questions via inquirer depending on
