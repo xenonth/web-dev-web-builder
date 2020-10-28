@@ -78,10 +78,8 @@ function memberSelection () {
 
             // Once Manager is done will build, render and construct html.
             console.log("Formatting team members");
-            
-            console.log(teamArray);
 
-                        console.log("Contstructing team.html!")
+            console.log("Contstructing team.html!")
         
             fs.writeFile(outputPath, render(teamArray), function(err) {
                 if (err) {
@@ -123,7 +121,7 @@ function engineerTeamMember() {
         
         ]) .then( data => {
                 let engineer = new Engineer(data.name, data.id, data.email, data.github);
-                console.log(engineer);
+
                 teamArray.push(engineer)
                 // calling for additional members
                 memberSelection();
@@ -159,7 +157,7 @@ function internTeamMember () {
 
         ]) .then( data => {
                 let intern = new Intern(data.name, data.id, data.email, data.school);
-                console.log(intern);
+
                 teamArray.push(intern);
 
                 memberSelection()
