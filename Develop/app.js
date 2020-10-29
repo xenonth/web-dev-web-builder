@@ -41,9 +41,9 @@ const projectLeader = () => {
     {
         name: "officeNumber",
         message: "What is your Office Number?",
-        type: "type",
+        type: "input",
 
-        },
+    
     },
 
     ]) .then( data => {
