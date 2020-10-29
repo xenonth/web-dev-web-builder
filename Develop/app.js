@@ -24,13 +24,19 @@ const teamArray = [];
 const projectLeader = () => {
     inquirer.prompt([{
         name: "name",
-        message: "What is your Name?",
+        message: "What is your Manager's Name?",
         type: "input",
     },
     {
         name: "id",
         message: "What is your Employee's ID Number (must be a Number Input)?",
         type: "number",
+        validate: answer => {
+            if (answer === NaN) {
+                return "Please Enter a Number"
+            } 
+            return true
+        }
     },
     {
         name: "email",
@@ -39,8 +45,14 @@ const projectLeader = () => {
     },
     {
         name: "officeNumber",
-        message: "What is your Office Number, Where is it located?",
-        type: "input",
+        message: "What is your Office Number?",
+        type: "number",
+        validate: answer => {
+            if (answer === NaN) {
+                return "Please Enter a Number"
+            } 
+            return true
+        },
     },
 
     ]) .then( data => {
@@ -87,7 +99,7 @@ function memberSelection () {
                 console.log(err)
 
                 } else {
-                    console.log("team.html has been successfully built!")
+                    console.log("Success! You can find team.html in the output directory/folder")
                 }
             });
         }
@@ -169,29 +181,3 @@ function internTeamMember () {
 } 
 // to run the program
 projectLeader();
-
-
-/* 
-After the user has input all employees desired, call the `render` function (required
- above) and pass in an array containing all employee objects; the `render` function will
- generate and return a block of HTML including templated divs for each employee! 
- */
-
-
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
-
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
