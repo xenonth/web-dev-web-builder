@@ -30,13 +30,8 @@ const projectLeader = () => {
     {
         name: "id",
         message: "What is your Employee's ID Number (must be a Number Input)?",
-        type: "number",
-        validate: answer => {
-            if (answer === NaN) {
-                return "Please Enter a Number"
-            } 
-            return true
-        }
+        type: "input",
+        
     },
     {
         name: "email",
@@ -46,12 +41,8 @@ const projectLeader = () => {
     {
         name: "officeNumber",
         message: "What is your Office Number?",
-        type: "number",
-        validate: answer => {
-            if (answer === NaN) {
-                return "Please Enter a Number"
-            } 
-            return true
+        type: "type",
+
         },
     },
 
